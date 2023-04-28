@@ -28,6 +28,18 @@ X_trn = X[:N_trn]
 X_val = X[N_trn: N_trn + N_val]
 X_tst = X[-N_tst:]
 
+# =============================================================================
+# About the solution
+# =============================================================================
+
+"""
+The solution is purely spatial. It estimates the covariances between each point
+in the grid and then uses the best linear predictior based on estimated mean
+and covariance.  Note that temporal dependencies is not accounted for, however
+analysing the data, the spatial correlation is close to 1, so modelling 
+temporal dependencies would properly give only minor improvements. 
+"""
+
 
 # =============================================================================
 # Infer mean and covariance parameters
